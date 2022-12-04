@@ -1,9 +1,11 @@
 import { env } from "process";
 
 const parseEnv = () => {
-    Object.entries(env).forEach((entry) => 
-      entry[0].startsWith("RSS_") ? console.log(`${entry[0]}=${entry[1]}`) : ''
-    );
+  var printLine = '';
+  Object.entries(env).forEach((entry) => 
+    printLine += entry[0].startsWith("RSS_") ? `${entry[0]}=${entry[1]}; ` : ''
+  );
+  console.log(printLine.substring(0, printLine.length - 2));
 };
 
 parseEnv();
