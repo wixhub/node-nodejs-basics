@@ -1,5 +1,9 @@
+import { stdin, stdout } from "process";
+
 const transform = async () => {
-    // Write your code here 
+    stdin.on("readable", () => {
+        stdout.write(stdin.read().reverse());
+    });
 };
 
 await transform();
